@@ -32,3 +32,6 @@ Develop functions for moving the robotic arm to specific positions based on inpu
 3. Control Algorithms:
 Implement inverse kinematics to calculate the necessary angles for the servos and the stepper motor position to achieve the desired end-effector position.
 Develop a user interface (e.g., web interface or mobile app) for remote control and command input.
+4. Path Planning:
+Kinematics Calculation: Implement forward and inverse kinematics to determine the arm’s position and required joint angles.
+Trajectory Generation: Use algorithms like linear interpolation or more advanced techniques (e.g., Bézier curves) to generate smooth trajectories for the arm to follow.
