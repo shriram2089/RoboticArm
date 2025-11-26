@@ -4,7 +4,11 @@ A 3-DOF Robotic Arm Powered by ESP32
 This repository contains the design and implementation of a **3 Degrees of Freedom (DOF) robotic arm** controlled using an **ESP32 microcontroller**.  
 The robotic arm uses a **stepper motor** for base rotation and **two servo motors** for shoulder and elbow motion, enabling basic manipulation tasks such as picking, placing, and small object handling.
 
-![Robotic Arm](3dof_arm.jpeg)
+
+
+<p align="center">
+  <img src="./3dof_arm.jpeg" width="40%">
+</p>
 
 ---
 
