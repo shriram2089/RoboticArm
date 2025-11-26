@@ -1,37 +1,97 @@
-# RoboticArm
-Designed a 3 Degrees of Freedom (DOF) robotic arm controlled by an ESP32 microcontroller. The robotic arm will have a stepper motor for base rotation and two servos for arm movement, allowing it to perform tasks such as picking, placing, and other manipulations.
+# RoboticArm  
+A 3-DOF Robotic Arm Powered by ESP32
 
-Components:
-ESP32 Microcontroller:
+This repository contains the design and implementation of a **3 Degrees of Freedom (DOF) robotic arm** controlled using an **ESP32 microcontroller**.  
+The robotic arm uses a **stepper motor** for base rotation and **two servo motors** for shoulder and elbow motion, enabling basic manipulation tasks such as picking, placing, and small object handling.
 
-Acts as the brain of the robotic arm, processing commands and controlling the motors.
-Provides Wi-Fi/Bluetooth capabilities for remote control and programming.
-Stepper Motor:
+![Robotic Arm](3dof_arm.jpeg)
 
-Controls the base rotation of the robotic arm.
-Provides precise control over the arm's horizontal movement.
-Servos:
+---
 
-Two servos control the vertical movements of the arm.
-The first servo moves the lower arm (shoulder joint), and the second servo moves the upper arm (elbow joint).
-Power Supply:
+## 🦾 Project Overview
 
-Provides the necessary power to the ESP32, stepper motor, and servos.
-Structural Components:
+The robotic arm is built using a combination of **ESP32 control**, **stepper motor precision**, and **servo-based articulation**.  
+It serves as an accessible, low-cost platform for learning robotic motion, kinematics, and control algorithms.
 
-Arm segments, base, and joints made of materials such as aluminum, plastic, or 3D-printed parts.
-Methodology:
-1. Hardware Setup:
-Assemble the robotic arm using the structural components, attaching the stepper motor at the base and the servos at the designated joints.
-Connect the stepper motor and servos to the ESP32 microcontroller using appropriate drivers (e.g., A4988 stepper driver for the stepper motor).
-Ensure all connections are secure and the power supply is adequate for all components.
-2. ESP32 Programming:
-Use the Arduino IDE or ESP-IDF to write the control code for the ESP32.
-Implement libraries for controlling the stepper motor and servos.
-Develop functions for moving the robotic arm to specific positions based on input commands.
-3. Control Algorithms:
-Implement inverse kinematics to calculate the necessary angles for the servos and the stepper motor position to achieve the desired end-effector position.
-Develop a user interface (e.g., web interface or mobile app) for remote control and command input.
-4. Path Planning:
-Kinematics Calculation: Implement forward and inverse kinematics to determine the arm’s position and required joint angles.
-Trajectory Generation: Use algorithms like linear interpolation or more advanced techniques (e.g., Bézier curves) to generate smooth trajectories for the arm to follow.
+---
+
+## 🔧 Components Used
+
+### **1. ESP32 Microcontroller**
+- Acts as the central controller  
+- Handles all motion commands and joint coordination  
+- Provides **Wi-Fi/Bluetooth** for wireless control  
+- Supports programming via **Arduino IDE** or **ESP-IDF**
+
+### **2. Stepper Motor (Base Rotation)**
+- Controls horizontal rotation of the arm  
+- Enables precise angular movement  
+- Driven using an **A4988** or similar stepper driver  
+
+### **3. Servo Motors (Shoulder & Elbow)**
+- Two servos provide vertical arm articulation  
+- **Servo 1:** Shoulder joint (lower arm)  
+- **Servo 2:** Elbow joint (upper arm)  
+
+### **4. Power Supply**
+- Powers ESP32 + stepper + servos  
+- Requires stable current to avoid servo jitter or brown-outs  
+
+### **5. Structural Components**
+- Base plate  
+- Lower & upper arm segments  
+- Joints + motor mounts  
+- Fabricated using **aluminum**, **acrylic**, or **3D-printed parts**
+
+---
+
+## 🛠 Methodology
+
+### **1. Hardware Setup**
+- Assemble arm frame and joints  
+- Mount stepper motor at base  
+- Mount both servos at shoulder and elbow joints  
+- Connect:
+  - Stepper → A4988 driver → ESP32  
+  - Servos → PWM pins of ESP32  
+- Ensure stable power distribution  
+
+---
+
+### **2. ESP32 Programming**
+- Programmed using **Arduino IDE** or **ESP-IDF**  
+- Includes:
+  - Stepper control library  
+  - Servo control library  
+  - Joint angle computation  
+  - Remote command interface  
+- Supports:
+  - Serial commands  
+  - Web dashboard  
+  - Bluetooth control (optional)  
+
+---
+
+### **3. Control Algorithms**
+- **Inverse Kinematics (IK)** implemented for 2-link planar movement  
+- Calculates joint angles based on desired end-effector coordinates  
+- Stepper motor provides base angle; servos provide vertical articulation  
+- Implements:
+  - Joint synchronization  
+  - Speed control  
+  - Smooth movement  
+
+---
+
+### **4. Path Planning**
+- **Forward Kinematics (FK)** to determine the end-effector pose  
+- **Inverse Kinematics (IK)** to compute joint angles  
+- **Trajectory generation**:
+  - Linear interpolation for straight-line motion  
+  - Optionally Bézier or spline-based smooth trajectories  
+- Ensures fluid arm motion without abrupt jumps  
+
+---
+
+## 📂 Repository Structure (Suggested)
+
